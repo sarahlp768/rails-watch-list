@@ -1,0 +1,13 @@
+<div class="container text-center">
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, label: 'Anything to say on the movie?', error: 'A comment is mandatory, please specify one', placeholder: 'Example: Scary Movie 2 is hilarious!' %>
+  <%= f.association :movie, class: "btn btn-outline-primary btn-lg bold" %>
+  <%= f.button :submit, class: "btn btn-outline-primary btn-lg bold" %>
+<% end %>
+
+ <div class="d-flex justify-content-center mt-4 gap-3">
+    <%= link_to "Back to the list", list_path(@list), class: "btn btn-outline-success btn-lg bold"%>
+  </div>
+
+</div>
