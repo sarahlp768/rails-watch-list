@@ -1,17 +1,41 @@
-<h1 class="text-center my-4 bold">Movies lists overview</h1>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://e7.pngegg.com/pngimages/776/561/png-clipart-computer-icons-internet-domain-name-cinema-logo-television-angle.png"
+           alt="Logo" width="30" height="24" class="d-inline-block align-text-top me-2">
+      <span class="fw-bold">MOVIES WATCHLIST</span>
+    </a>
+  </div>
+</nav>
+
+<h1 class="text-center my-4 fw-bold">Lists overview</h1>
 
 <div class="container">
   <ul class="list-group mb-4">
     <% @lists.each do |list| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <%= link_to list.name, list_path(list), class: "text-decoration-none text-dark" %>
+      <li class="list-group-item d-flex justify-content-between align-items-center m-4 border border-dark rounded hover-effect">
+        <%= link_to list.name, list_path(list), class: "text-decoration-none fw-bold link-hover" %>
       </li>
     <% end %>
   </ul>
+</div>
 
+<style>
+  .hover-effect {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .hover-effect:hover {
+    background-color: black;
+  }
+  .hover-effect:hover .link-hover {
+    color: white !important;
+  }
+  .link-hover {
+    color: black;
+    transition: color 0.3s;
+  }
+</style>
 
- <div class="text-center">
-    <%= link_to "Add a new list", new_list_path, class: "btn btn-outline-primary btn-lg" %>
-
-  </div>
+<div class="text-center">
+  <%= link_to "Add a new list", new_list_path, class: "btn btn-outline-success btn-lg fw-bold" %>
 </div>

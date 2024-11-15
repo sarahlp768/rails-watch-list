@@ -1,13 +1,23 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://e7.pngegg.com/pngimages/776/561/png-clipart-computer-icons-internet-domain-name-cinema-logo-television-angle.png"
+           alt="Logo" width="30" height="24" class="d-inline-block align-text-top me-2">
+      <span class="fw-bold">MOVIES WATCHLIST</span>
+    </a>
+  </div>
+</nav>
+
 <div class="container text-center">
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment, label: 'Anything to say on the movie?', error: 'A comment is mandatory, please specify one', placeholder: 'Example: Scary Movie 2 is hilarious!' %>
-  <%= f.association :movie, class: "btn btn-outline-primary btn-lg bold" %>
-  <%= f.button :submit, class: "btn btn-outline-primary btn-lg bold" %>
+  <div class= "fw-bold"> <%= f.input :comment, label: 'Anything to say on the movie?', error: 'A comment is mandatory, please specify one', placeholder: 'Example: Scary Movie 2 is hilarious!' %> </div>
+  <div class= "fw-bold"> <%= f.association :movie, class: "btn btn-outline-primary btn-lg bold" %> </div>
+  <%= f.button :submit, class: "btn btn-outline-success btn-lg fw-bold" %>
 <% end %>
 
  <div class="d-flex justify-content-center mt-4 gap-3">
-    <%= link_to "Back to the list", list_path(@list), class: "btn btn-outline-success btn-lg bold"%>
+    <%= link_to "Back to the list", list_path(@list), class: "btn btn-outline-primary btn-lg fw-bold"%>
   </div>
 
 </div>
